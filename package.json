@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.ts --exec ts-node src/index.ts -e ts, graphql"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +19,11 @@
     "typescript": "^5.4.3"
   },
   "dependencies": {
-    "apollo-server-express": "^3.13.0",
+    "@apollo/server": "^4.10.2",
+    "@graphql-tools/load": "^8.0.2",
+    "@graphql-tools/schema": "^10.0.3",
+    "@graphql-tools/utils": "^10.1.2",
+    "@types/express-serve-static-core": "^4.17.43",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "graphql": "^16.8.1",
