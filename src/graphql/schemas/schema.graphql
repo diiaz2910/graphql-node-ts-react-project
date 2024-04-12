@@ -8,3 +8,17 @@ type Items {
   name: String!
   description: String!
 }
+
+# Enum es un tipo de dato que se usa para definir un conjunto de constantes,
+# por lo tanto el tipo name solo aceptaria los valores definidos en el enum
+# enum name {
+#   TV
+#   CAMA
+#   GUADANA
+#   CORTA_CESPED
+#   SABANA
+#   CAMARA
+#   MESA
+#   SILLA
+#   REPUESTO
+# }
