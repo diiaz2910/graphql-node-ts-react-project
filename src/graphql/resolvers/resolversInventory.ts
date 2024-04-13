@@ -1,15 +1,26 @@
 import { IResolvers } from "@graphql-tools/utils";
+import data from "../../data/data.json";
 
 const inventoryResolver: IResolvers = {
   Query: {
-    hello() {
-      return "Hello World!";
-    },
     getItems() {
-      return [
-        { id: 1, name: "Guadana", description: "Marca Stihl" },
-        { id: 2, name: "Martillo", description: "Martillo de 1kg" },
-      ];
+      return data.inventory;
+    },
+    getItem(root: void, args: any) {
+      const [found] = data.inventory.filter((inv) => inv._id === args._id);
+      return found;
+    },
+  },
+  Items: {
+    payments(parent: any) {
+      // todos los resolvers pueden recibir hasta 4 parametros root, args, context, options
+      const paymentList: Array<any> = [];
+      parent.payments.map((paymentId: string) =>
+        paymentList.push(
+          ...data.payments.filter((payment) => payment._id === paymentId)
+        )
+      );
+      return paymentList;
     },
   },
 };

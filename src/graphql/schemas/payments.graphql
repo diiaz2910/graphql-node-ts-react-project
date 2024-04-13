@@ -1,10 +1,9 @@
 type Query {
-  hello: String!
-  getPayments: [Payment]!
+  getPayments: [Payment]
 }
 
 type Payment {
-  id: ID!
-  amount: Float!
-  description: String!
+  _id: ID
+  amount: Float
+  description: String
 }

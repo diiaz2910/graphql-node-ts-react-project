@@ -1,12 +1,13 @@
 type Query {
-  hello: String! # El signo de exclamación indica que el campo es obligatorio
   getItems: [Items] # [Items!]! indica que es un array de objetos Items, no puede ser nulo y tampoco los objetos dentro del array
+  getItem(_id: ID!): Items # _id es un argumento obligatorio
 }
 
 type Items {
-  id: ID! # ID debe ir en mayúsculas
-  name: String!
-  description: String!
+  _id: ID # ID debe ir en mayúsculas
+  name: String
+  description: String
+  payments: [Payment]
 }
 
 # Enum es un tipo de dato que se usa para definir un conjunto de constantes,
