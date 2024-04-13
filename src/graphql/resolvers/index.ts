@@ -1,9 +1,7 @@
-const { mergeSchemas } = require("@graphql-tools/schema");
+import { mergeResolvers } from "@graphql-tools/merge";
 import inventoryResolvers from "./resolversInventory";
 import paymentResolvers from "./resolversPayments";
 
-const resolvers = mergeSchemas({
-  schemas: [inventoryResolvers, paymentResolvers],
-});
+const resolvers = mergeResolvers([inventoryResolvers, paymentResolvers]);
 
 export default resolvers;
