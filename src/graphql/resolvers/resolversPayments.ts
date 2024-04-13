@@ -1,6 +1,6 @@
 import { IResolvers } from "@graphql-tools/utils";
 
-const paymentsResolvers: IResolvers = {
+const paymentsResolver: IResolvers = {
   Query: {
     hello() {
       return "Hello World!";
@@ -14,4 +14,4 @@ const paymentsResolvers: IResolvers = {
   },
 };
 
-export default paymentsResolvers;
+export default paymentsResolver;

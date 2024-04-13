@@ -3,11 +3,12 @@ import { makeExecutableSchema } from "@graphql-tools/schema";
 import "graphql-import-node";
 import inventoryTypeDefs from "./schemas/inventory.graphql";
 import paymentsTypeDefs from "./schemas/payments.graphql";
-import resolvers from "./resolvers/index";
+import inventoryResolver from "./resolvers/resolversInventory";
+import paymentsResolver from "./resolvers/resolversPayments";
 
 const schema: GraphQLSchema = makeExecutableSchema({
   typeDefs: [inventoryTypeDefs, paymentsTypeDefs],
-  resolvers,
+  resolvers: [inventoryResolver, paymentsResolver],
 });
 
 export default schema;
