@@ -1,0 +1,10 @@
+type Query {
+  hello: String!
+  getPayments: [Payment]!
+}
+
+type Payment {
+  id: ID!
+  amount: Float!
+  description: String!
+}

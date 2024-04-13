@@ -1,6 +1,6 @@
 import { IResolvers } from "@graphql-tools/utils";
 
-const resolvers: IResolvers = {
+const inventoryResolvers: IResolvers = {
   Query: {
     hello() {
       return "Hello World!";
@@ -14,4 +14,4 @@ const resolvers: IResolvers = {
   },
 };
 
-export default resolvers;
+export default inventoryResolvers;
