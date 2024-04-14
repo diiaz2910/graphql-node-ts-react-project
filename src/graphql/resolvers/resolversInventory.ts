@@ -11,6 +11,12 @@ const inventoryResolver: IResolvers = {
       return found;
     },
   },
+  Mutation: {
+    createItem(root: void, args: any) {
+      data.inventory.push(args.item);
+      return "Item created";
+    },
+  },
   Items: {
     payments(parent: any) {
       // todos los resolvers pueden recibir hasta 4 parametros root, args, context, options

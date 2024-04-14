@@ -3,11 +3,23 @@ type Query {
   getItem(_id: ID!): Items # _id es un argumento obligatorio
 }
 
+type Mutation {
+  createItem(item: NewItemInput!): String!
+}
+
 type Items {
   _id: ID # ID debe ir en mayúsculas
   name: String
   description: String
+  image: String
   payments: [Payment]
+}
+
+input NewItemInput {
+  name: String!
+  description: String!
+  image: String!
+  payments: [String!]!
 }
 
 # Enum es un tipo de dato que se usa para definir un conjunto de constantes,
