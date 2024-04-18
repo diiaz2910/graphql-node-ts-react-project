@@ -1,9 +1,10 @@
 <div align="center">
   <a href="https://graphql.org/" target="_blank"><img src="https://graphql.org/img/logo.svg" width="200" alt="GraphQL Logo"></a>
-  <a href="https://www.apollographql.com/" target="_blank"><img src="https://apollographql.gallerycdn.vsassets.io/extensions/apollographql/apollo-studio/0.9.0/1600338260458/Microsoft.VisualStudio.Services.Icons.Default" width="200" alt="Apollo Logo"></a>
+  <a href="https://www.apollographql.com/" target="_blank"><img src="https://global.discourse-cdn.com/business5/uploads/apollographql/original/1X/25bd5104d61020fe4dc0777a5919cd009bca633e.png" width="200" alt="Apollo Logo"></a>
   <h1>Project Name</h1>
   <p>Brief description of the project and its purpose.</p>
 </div>
+
 
 <p align="center">
   <a href="https://www.npmjs.com/package/graphql"><img src="https://img.shields.io/npm/dt/graphql" alt="Total NPM Downloads"></a>
