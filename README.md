@@ -1,5 +1,6 @@
 <div align="center">
   <a href="https://graphql.org/" target="_blank"><img src="https://graphql.org/img/logo.svg" width="200" alt="GraphQL Logo"></a>
+  <a href="https://www.apollographql.com/" target="_blank"><img src="https://apollographql.gallerycdn.vsassets.io/extensions/apollographql/apollo-studio/0.9.0/1600338260458/Microsoft.VisualStudio.Services.Icons.Default" width="200" alt="Apollo Logo"></a>
   <h1>Project Name</h1>
   <p>Brief description of the project and its purpose.</p>
 </div>
@@ -15,3 +16,4 @@
   <a href="https://www.npmjs.com/package/@apollo/client"><img src="https://img.shields.io/npm/v/@apollo/client" alt="Latest Stable Version"></a>
   <a href="https://www.npmjs.com/package/@apollo/client"><img src="https://img.shields.io/npm/l/@apollo/client" alt="License"></a>
 </p>
+
