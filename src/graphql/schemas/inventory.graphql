@@ -1,6 +1,6 @@
 type Query {
   getItems: [Items] # [Items!]! indica que es un array de objetos Items, no puede ser nulo y tampoco los objetos dentro del array
-  getItem(_id: ID!): Items # _id es un argumento obligatorio
+  getItem(_id: ID): Items # _id es un argumento obligatorio
 }
 
 type Mutation {
@@ -16,10 +16,10 @@ type Items {
 }
 
 input NewItemInput {
-  name: String!
-  description: String!
-  image: String!
-  payments: [String!]!
+  name: String
+  description: String
+  image: String
+  payments: [String]
 }
 
 # Enum es un tipo de dato que se usa para definir un conjunto de constantes,

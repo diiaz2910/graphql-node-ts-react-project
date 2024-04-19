@@ -1,10 +1,15 @@
+import { Db } from "mongodb";
 import { IResolvers } from "@graphql-tools/utils";
 import data from "../../data/data.json";
 
 const inventoryResolver: IResolvers = {
   Query: {
-    getItems() {
-      return data.inventory;
+    async getItems(root: void, args: void, context: Db) {
+      try {
+        return await context.collection("items").find().toArray();
+      } catch (error) {
+        console.log(error);
+      }
     },
     getItem(root: void, args: any) {
       const [found] = data.inventory.filter((inv) => inv._id === args._id);
@@ -12,9 +17,14 @@ const inventoryResolver: IResolvers = {
     },
   },
   Mutation: {
-    createItem(root: void, args: any) {
-      data.inventory.push(args.item);
-      return "Item created";
+    async createItem(root: void, args: any, context: { db: Db }) {
+      try {
+        await context.db.collection("items").insertOne(args.item);
+        data.inventory.push(args.item);
+        return "Item created";
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
   Items: {
