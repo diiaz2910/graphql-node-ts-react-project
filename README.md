@@ -43,15 +43,29 @@
 <h2 id="project-structure">Project Structure</h2>
 <p>Description of the project&#39;s file and folder structure.</p>
 <pre><code class="language-java">.
-├── public/
-│   ├── index.html
-├── src/
-│   ├── components/
-│   ├── App.tsx
-│   ├── index.tsx
-├── .gitignore
-├── package.json
-└── README.md
+BACKEND (main folder)
+node_modules/
+src/
+├── config/
+│   └── index.ts
+├── data/
+│   └── data.json
+├── mongo/
+│   └── index.ts
+├── graphql/
+│   ├── index.ts
+│   ├── resolvers/
+│   │   ├── resolverInventory.ts
+│   │   └── resolverPayments.ts
+│   └── schemas/
+│       ├── inventory.graphql
+│       └── payments.graphql
+└── index.ts
+.env
+.gitignore
+package-lock.json
+package.json
+tsconfig.json
 </code></pre>
 <h2 id="dependencies">Dependencies</h2>
 <p>List of the main project dependencies and their function:</p>
