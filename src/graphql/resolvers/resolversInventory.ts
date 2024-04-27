@@ -1,12 +1,16 @@
 import { Db } from "mongodb";
 import { IResolvers } from "@graphql-tools/utils";
 import data from "../../data/data.json";
+import { INVENTORY_COLLECTION } from "../../mongo/collections";
 
 const inventoryResolver: IResolvers = {
   Query: {
-    async getItems(root: void, args: void, context: Db) {
+    async getItems(root: void, args: void, context: { db: Db }) {
       try {
-        return await context.collection("items").find().toArray();
+        return await context.db
+          .collection(INVENTORY_COLLECTION)
+          .find()
+          .toArray();
       } catch (error) {
         console.log(error);
       }
@@ -19,7 +23,7 @@ const inventoryResolver: IResolvers = {
   Mutation: {
     async createItem(root: void, args: any, context: { db: Db }) {
       try {
-        await context.db.collection("items").insertOne(args.item);
+        await context.db.collection(INVENTORY_COLLECTION).insertOne(args.item);
         data.inventory.push(args.item);
         return "Item created";
       } catch (error) {
