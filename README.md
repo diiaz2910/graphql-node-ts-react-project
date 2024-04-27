@@ -40,7 +40,7 @@
 <li>Push to the branch: <code>git push origin feature/FeatureName</code>.</li>
 <li>Open a pull request on GitHub.</li>
 </ul>
-<h2 id="project-structure">Project Structure</h2>
+<h2 id="project-structure">Project Structure (will update periodically)</h2>
 <p>Description of the project&#39;s file and folder structure.</p>
 <pre><code class="language-java">.
 BACKEND (main folder)
