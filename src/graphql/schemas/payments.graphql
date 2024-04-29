@@ -2,8 +2,17 @@ type Query {
   getPayments: [Payment]
 }
 
+type Mutation {
+  createPayments(payment: newPaymentInput): String
+}
+
 type Payment {
   _id: ID
+  amount: Float
+  description: String
+}
+
+input newPaymentInput {
   amount: Float
   description: String
 }
