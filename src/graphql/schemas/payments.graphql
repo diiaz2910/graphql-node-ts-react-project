@@ -4,6 +4,7 @@ type Query {
 
 type Mutation {
   createPayments(payment: newPaymentInput): String
+  updatePayments(payment: updatePaymentInput): String
 }
 
 type Payment {
@@ -13,6 +14,12 @@ type Payment {
 }
 
 input newPaymentInput {
+  amount: String
+  description: String
+}
+
+input updatePaymentInput {
+  _id: ID
   amount: String
   description: String
 }
