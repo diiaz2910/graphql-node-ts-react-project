@@ -2,6 +2,9 @@ import { Db } from "mongodb";
 import { IResolvers } from "@graphql-tools/utils";
 import { PAYMENT_COLLECTION } from "../../mongo/collections";
 
+// interfaces
+import { IPayments } from "./../../interfaces/IPayments";
+
 const paymentsResolver: IResolvers = {
   Query: {
     async getPayments(root: void, args: any, context: { db: Db }) {

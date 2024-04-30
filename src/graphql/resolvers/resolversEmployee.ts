@@ -2,6 +2,9 @@ import { Db } from "mongodb";
 import { IResolvers } from "@graphql-tools/utils";
 import { EMPLOYEE_COLLECTION } from "../../mongo/collections";
 
+// interfaces
+import { IEmployee } from "./../../interfaces/IEmployee";
+
 const employeeResolver: IResolvers = {
   Query: {
     async getEmployees(root: void, args: void, context: { db: Db }) {

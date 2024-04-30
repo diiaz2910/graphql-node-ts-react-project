@@ -2,6 +2,9 @@ import { Db } from "mongodb";
 import { IResolvers } from "@graphql-tools/utils";
 import { INVENTORY_COLLECTION } from "../../mongo/collections";
 
+// interfaces
+import { IInventory } from "../../interfaces/IInventory";
+
 const inventoryResolver: IResolvers = {
   Query: {
     async getItems(root: void, args: void, context: { db: Db }) {
