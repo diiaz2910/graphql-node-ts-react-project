@@ -8,11 +8,11 @@ type Mutation {
 
 type Payment {
   _id: ID
-  amount: Float
+  amount: String
   description: String
 }
 
 input newPaymentInput {
-  amount: Float
+  amount: String
   description: String
 }

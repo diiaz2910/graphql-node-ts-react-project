@@ -1,6 +1,5 @@
 import { Db } from "mongodb";
 import { IResolvers } from "@graphql-tools/utils";
-import data from "../../data/data.json";
 import { EMPLOYEE_COLLECTION } from "../../mongo/collections";
 
 const employeeResolver: IResolvers = {
@@ -19,12 +18,17 @@ const employeeResolver: IResolvers = {
   Mutation: {
     async createEmployee(root: void, args: any, context: { db: Db }) {
       try {
+        const regexp = new RegExp(args.employee.name.identification, "i");
+        const exist = await context.db
+          .collection(EMPLOYEE_COLLECTION)
+          .findOne({ name: regexp });
+        if (exist) {
+          return "Employee already exists";
+        }
         await context.db
           .collection(EMPLOYEE_COLLECTION)
           .insertOne(args.employee);
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
       return "Employee created successfully";
     },
   },
