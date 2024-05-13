@@ -3,6 +3,8 @@ import express from "express";
 import cors from "cors";
 import { expressMiddleware } from "@apollo/server/express4"; // Importa expressMiddleware
 import schema from "./graphql";
+import MongoLib from "./mongo";
+import config from "./config";
 
 const app = express();
 app.use(cors());
@@ -13,19 +15,26 @@ const server = new ApolloServer({
 });
 
 server.start().then(() => {
-  // Utiliza expressMiddleware para montar el servidor Apollo en Express en la ruta "/graphql"""
   app.use(
     "/playground",
     cors<cors.CorsRequest>(),
     express.json(),
     expressMiddleware(server, {
-      context: async ({ req }) => ({ token: req.headers.token }),
+      context: async ({ req, res }) => {
+        const db = await new MongoLib().connect();
+        const token = req.headers.token;
+        return { db, token };
+      },
     })
   );
 
   const PORT = process.env.PORT || 5000;
 
-  app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+  app.listen(config.port, () => {
+    console.log(
+      `Server is running on http://localhost:${config.port}/playground`
+    );
   });
 });
+
+//mongodb+srv://diiaz2910:<password>@cluster0.rvf4dfg.mongodb.net/

@@ -1,0 +1,27 @@
+type Query {
+  getPayments: [Payment]
+}
+
+type Mutation {
+  createPayments(payment: newPaymentInput): String
+  updatePayments(payment: updatePaymentInput): String
+}
+
+type Payment {
+  _id: ID
+  amount: String
+  image: String
+  description: String
+}
+
+input newPaymentInput {
+  amount: String
+  image: String
+  description: String
+}
+
+input updatePaymentInput {
+  _id: ID
+  amount: String
+  description: String
+}

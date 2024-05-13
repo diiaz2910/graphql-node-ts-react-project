@@ -1,0 +1,34 @@
+{
+    "inventory": [
+        {
+            "_id": "1",
+            "name": "Guadana",
+            "description" : "Marca Stihl",
+            "payments": [
+                "1",
+                "2"
+            ]
+        },
+        {
+            "_id": "2",
+            "name": "Martillo",
+            "description" : "Martillo de 1kg",
+            "payments": [
+                "1"
+            ]
+        }
+    ],
+    "payments": [
+        {
+            "_id": "1",
+            "amount": 100,
+            "description": "Pagado"
+            
+        },
+        {
+            "_id": "2",
+            "amount": 100,
+            "description": "Pendiente"
+        }
+    ]
+}
