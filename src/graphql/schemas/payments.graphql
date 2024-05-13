@@ -10,11 +10,13 @@ type Mutation {
 type Payment {
   _id: ID
   amount: String
+  image: String
   description: String
 }
 
 input newPaymentInput {
   amount: String
+  image: String
   description: String
 }
 

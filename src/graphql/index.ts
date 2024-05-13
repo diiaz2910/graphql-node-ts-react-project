@@ -8,6 +8,8 @@ import inventoryResolver from "./resolvers/resolversInventory";
 import paymentsResolver from "./resolvers/resolversPayments";
 import employeeResolver from "./resolvers/resolversEmployee";
 
+
+
 const schema: GraphQLSchema = mergeSchemas({
   typeDefs: [inventoryTypeDefs, paymentsTypeDefs, employeeTypeDefs],
   resolvers: [inventoryResolver, paymentsResolver, employeeResolver],

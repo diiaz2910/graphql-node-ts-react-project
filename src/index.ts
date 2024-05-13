@@ -31,7 +31,9 @@ server.start().then(() => {
   const PORT = process.env.PORT || 5000;
 
   app.listen(config.port, () => {
-    console.log(`Server is running on http://localhost:${config.port}/graphql`);
+    console.log(
+      `Server is running on http://localhost:${config.port}/playground`
+    );
   });
 });
 
