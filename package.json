@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.ts --exec ts-node src/index.ts -e ts, graphql"
+    "dev": "nodemon src/index.ts --exec ts-node src/index.ts -e ts, graphql",
+    "build": "tsc -p . & ncp src/graphql/schemas dist/graphql/schemas",
+    "start": "node dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +34,7 @@
     "graphql": "^16.8.1",
     "graphql-import-node": "^0.0.5",
     "graphql-tools": "^9.0.1",
-    "mongodb": "^6.5.0"
+    "mongodb": "^6.5.0",
+    "ncp": "^2.0.0"
   }
 }
